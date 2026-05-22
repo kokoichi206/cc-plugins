@@ -3,7 +3,7 @@
 kokoichi206 個人用 Claude Code プラグイン集。
 
 スキルを **名前空間 (`<plugin>:`) で区切る** ための marketplace。
-開発支援は `kk-dev`、今後 `kk-writing` などカテゴリごとに plugin を追加していく。
+開発支援は `kk-dev`、それ以外も `kk-infra` / `kk-biz` / `kk-money` / `kk-writing` などカテゴリごとに plugin を追加していく。
 
 ## インストール
 
@@ -26,15 +26,20 @@ kokoichi206/cc-plugins
 
 ### 2. プラグインをインストール
 
-Marketplace 追加後、「Plugins」タブから `kk-dev` プラグインをインストール。
+Marketplace 追加後、「Plugins」タブから使いたいプラグインをインストール。
 
 ## 含まれるプラグイン
 
-| プラグイン                         | 説明                                                          |
-| ---------------------------------- | ------------------------------------------------------------- |
-| [kk-dev](plugins/kk-dev/README.md) | 開発支援。PR 作成・レビュー・監査・テスト生成・リファクタなど |
+| プラグイン                                 | 説明                                                                          |
+| ------------------------------------------ | ----------------------------------------------------------------------------- |
+| [kk-dev](plugins/kk-dev/README.md)         | 開発支援。PR 作成・レビュー・監査・テスト生成・リファクタなど                 |
+| [kk-infra](plugins/kk-infra/README.md)     | インフラ/クラウド運用。env 差分・Terraform 運用・デプロイ調査・安全な migrate |
+| [kk-biz](plugins/kk-biz/README.md)         | 受託/コンサル業務。面談整理・工数見積もり・ヒアリング設計                     |
+| [kk-money](plugins/kk-money/README.md)     | 会計/確定申告。立替突合・経費集計 (freee 連携)                                |
+| [kk-writing](plugins/kk-writing/README.md) | ドキュメント。marp スライド・引き継ぎ README・仕様確定                        |
 
 各プラグインのスキル一覧・使用例は、リンク先の README を参照。
+レイヤーごとの意図・選定根拠は [docs/layers.md](docs/layers.md) にまとめている。
 
 ## 更新
 
@@ -49,7 +54,7 @@ Marketplace 追加後、「Plugins」タブから `kk-dev` プラグインをイ
 ### 手動更新
 
 ```bash
-# プラグインを更新
+# プラグインを更新 (例: kk-dev)
 claude plugin update kk-dev@cc-plugins
 ```
 
@@ -66,12 +71,12 @@ claude plugin update kk-dev@cc-plugins
 
 ## 新しいプラグインを追加する
 
-新しいカテゴリの plugin を足す場合 (例: `kk-writing`):
+新しいカテゴリの plugin を足す場合 (例: `kk-xxx`):
 
-1. `plugins/kk-writing/.claude-plugin/plugin.json` を作成
+1. `plugins/kk-xxx/.claude-plugin/plugin.json` を作成
 2. `.claude-plugin/marketplace.json` の `plugins` 配列に追記
-3. `plugins/kk-writing/skills/<skill-name>/SKILL.md` を作成
-4. `plugins/kk-writing/README.md` を作成 (スキル一覧)
+3. `plugins/kk-xxx/skills/<skill-name>/SKILL.md` を作成
+4. `plugins/kk-xxx/README.md` を作成 (スキル一覧)
 5. `claude plugin validate .` で検証
 
 既存 plugin へのスキル追加手順は、各プラグインの README を参照。
