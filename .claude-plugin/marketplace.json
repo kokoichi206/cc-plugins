@@ -11,6 +11,26 @@
       "name": "kk-dev",
       "source": "./plugins/kk-dev",
       "description": "kokoichi206 開発支援プラグイン"
+    },
+    {
+      "name": "kk-infra",
+      "source": "./plugins/kk-infra",
+      "description": "kokoichi206 インフラ/クラウド運用支援プラグイン"
+    },
+    {
+      "name": "kk-biz",
+      "source": "./plugins/kk-biz",
+      "description": "kokoichi206 受託/コンサル業務支援プラグイン"
+    },
+    {
+      "name": "kk-money",
+      "source": "./plugins/kk-money",
+      "description": "kokoichi206 会計/確定申告支援プラグイン"
+    },
+    {
+      "name": "kk-writing",
+      "source": "./plugins/kk-writing",
+      "description": "kokoichi206 ドキュメント/ライティング支援プラグイン"
     }
   ]
 }
