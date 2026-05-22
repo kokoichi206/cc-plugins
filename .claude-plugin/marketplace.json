@@ -1,0 +1,16 @@
+{
+  "name": "cc-plugins",
+  "metadata": {
+    "description": "kokoichi206 個人用 Claude Code 拡張。スキルを名前空間で区切るための marketplace"
+  },
+  "owner": {
+    "name": "kokoichi206"
+  },
+  "plugins": [
+    {
+      "name": "kk-dev",
+      "source": "./plugins/kk-dev",
+      "description": "kokoichi206 開発支援プラグイン"
+    }
+  ]
+}
