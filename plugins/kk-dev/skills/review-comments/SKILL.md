@@ -66,6 +66,7 @@ allowed-tools:
 
      - **`isResolved: true` のスレッドは対象外として除外する** (resolved = 対応済みの明示シグナルのため再処理・重複返信しない)
      - 返信に必要な review comment の ID は各コメントの `databaseId` (REST のコメント ID と一致) を使う
+
    - `gh pr view --json comments` で issue comments も取得 (issue コメントに resolved の概念は無いため全件が対象)
    - 自分自身 (github-actions[bot] や claude[bot] など) のコメントは除外
 
