@@ -44,8 +44,30 @@ allowed-tools:
    - PR が存在しない場合はエラーメッセージを表示して終了
 
 2. **コメントの収集**
-   - `gh api repos/{owner}/{repo}/pulls/{pr_number}/comments` で review comments を取得
-   - `gh pr view --json comments` で issue comments も取得
+   - インラインのレビューコメントは GraphQL の `reviewThreads` で取得し、`isResolved` を判定する
+
+     ```bash
+     gh api graphql -f query='
+       query($owner:String!, $repo:String!, $pr:Int!) {
+         repository(owner:$owner, name:$repo) {
+           pullRequest(number:$pr) {
+             reviewThreads(first:100) {
+               nodes {
+                 isResolved
+                 comments(first:50) {
+                   nodes { databaseId body path author { login } }
+                 }
+               }
+             }
+           }
+         }
+       }' -F owner={owner} -F repo={repo} -F pr={pr_number}
+     ```
+
+     - **`isResolved: true` のスレッドは対象外として除外する** (resolved = 対応済みの明示シグナルのため再処理・重複返信しない)
+     - 返信に必要な review comment の ID は各コメントの `databaseId` (REST のコメント ID と一致) を使う
+
+   - `gh pr view --json comments` で issue comments も取得 (issue コメントに resolved の概念は無いため全件が対象)
    - 自分自身 (github-actions[bot] や claude[bot] など) のコメントは除外
 
 3. **各コメントの処理**
@@ -103,6 +125,7 @@ allowed-tools:
 
 ## 注意事項
 
+- resolved 済みのレビュースレッドは常に除外する (再オープンされた指摘のみが対象)
 - セキュリティ関連の指摘は優先度高く対応すること
 - 型安全性に関する指摘は慎重に検討すること
 - TODO コメントで「将来対応」と明記されている項目への指摘は、その旨を返信で説明すること
