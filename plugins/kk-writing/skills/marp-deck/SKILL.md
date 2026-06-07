@@ -1,7 +1,6 @@
 ---
 name: marp-deck
 description: 元ネタ (docs/会話/設計) から人に共有するための marp スライド (Markdown) を生成し、社内/技術の内部用語を聴衆に合わせた言葉へ翻訳する。トリガー - marp, スライド作成, slide, deck, 発表資料, 共有用資料
-model: sonnet
 disable-model-invocation: true
 argument-hint: "<元ネタ docs/ファイル> [--audience 顧客|社内]"
 allowed-tools:

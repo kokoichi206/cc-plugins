@@ -1,7 +1,6 @@
 ---
 name: estimate
 description: docs/会話/リポジトリから工数 (振れ幅付き) と費用を見積もる。デモ版までと本実装までを分け、AI 併用前提の係数も加味してファイル出力する。トリガー - 見積もり, 工数見積もり, 費用見積もり, estimate, WBS 見積もり
-model: opus
 disable-model-invocation: true
 argument-hint: "<対象 docs/リポジトリ> [--with-demo]"
 allowed-tools:

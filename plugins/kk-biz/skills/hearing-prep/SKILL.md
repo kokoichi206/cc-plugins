@@ -1,7 +1,6 @@
 ---
 name: hearing-prep
 description: 見積もり精度を上げるために顧客へ聞くべき質問を網羅生成し、各質問で何が決まるか (どの不確実性/振れ幅が縮むか) を併記してファイル出力する。トリガー - ヒアリング準備, 質問リスト作成, 顧客質問, 見積もり精度向上, hearing
-model: sonnet
 disable-model-invocation: true
 argument-hint: "<案件概要 or docs>"
 allowed-tools:

@@ -1,7 +1,6 @@
 ---
 name: tax-aggregate
 description: 確定申告用に経費を勘定科目で分類し、家事按分・減価償却を適用して年次集計する。集計を CSV 化し freee MCP で取込できる形にする。トリガー - 確定申告, 経費集計, 年次集計, 勘定科目, 家事按分, 減価償却, freee 取込, tax
-model: opus
 disable-model-invocation: true
 argument-hint: "<経費データのディレクトリ> [--year YYYY]"
 allowed-tools:
