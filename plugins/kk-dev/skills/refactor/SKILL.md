@@ -1,7 +1,6 @@
 ---
 name: refactor
 description: 指定されたコードを分析し、可読性・保守性・パフォーマンス・ベストプラクティスの観点からリファクタリングを提案する。コード変更は行わず提案のみ。トリガー - リファクタリング, refactor, コード改善, 整理, クリーンアップ
-model: sonnet
 argument-hint: "<対象ファイルまたはディレクトリ>"
 context: fork
 agent: Explore

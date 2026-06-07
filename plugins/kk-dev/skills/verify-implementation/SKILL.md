@@ -1,7 +1,6 @@
 ---
 name: verify-implementation
 description: 実装した機能をブラウザ操作ツールでスクリーンショット撮影し、変更が正しく反映されているか検証する。トリガー - 動作確認, スクリーンショット, 画面確認, UI 確認, 実装確認, 表示確認
-model: sonnet
 disable-model-invocation: true
 argument-hint: "<確認対象の説明>"
 allowed-tools:

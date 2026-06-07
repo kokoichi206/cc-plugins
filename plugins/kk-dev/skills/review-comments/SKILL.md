@@ -1,7 +1,6 @@
 ---
 name: review-comments
 description: 現在のブランチの PR に付いたレビューコメント (ボット・ユーザー両方) を確認し、修正対応・返信する。トリガー - レビュー対応, コメント対応, review comments, 指摘に対応, ボットの指摘
-model: sonnet
 disable-model-invocation: true
 allowed-tools:
   - Bash(gh pr:*)

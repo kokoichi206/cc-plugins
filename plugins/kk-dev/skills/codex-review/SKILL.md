@@ -1,7 +1,6 @@
 ---
 name: codex-review
 description: codex CLI (OpenAI Codex) を使用して現在の Git 変更をレビューし、問題点を報告・修正する。トリガー - codex でレビュー, codex review, AI レビュー, 変更をチェック
-model: opus
 disable-model-invocation: true
 argument-hint: "[--staged | commit...commit]"
 allowed-tools:
