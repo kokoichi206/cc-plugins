@@ -1,7 +1,6 @@
 ---
 name: review-detailed
 description: PR を設計整合性・業界標準・パフォーマンス・テスト妥当性の観点から詳細にレビューし、5 段階評価する。トリガー - 詳細レビュー, コードレビュー, PR レビュー, review, レビューして
-model: opus
 argument-hint: "<PR番号>"
 context: fork
 agent: general-purpose

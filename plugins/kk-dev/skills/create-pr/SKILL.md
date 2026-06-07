@@ -1,7 +1,6 @@
 ---
 name: create-pr
 description: 現在の変更からブランチ作成、コミット、プッシュ、PR 作成を一括実行する。CI の完了も監視する。トリガー - PR 作成, プルリクエスト, pull request, ブランチ作成して PR
-model: haiku
 disable-model-invocation: true
 argument-hint: "[--draft] [--skip-ci-wait] [--reviewer username]"
 allowed-tools:

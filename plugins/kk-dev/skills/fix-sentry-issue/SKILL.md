@@ -1,7 +1,6 @@
 ---
 name: fix-sentry-issue
 description: 指定された Sentry Issue ID を調査し修正を実施する。Sentry MCP でスタックトレースを取得し、根本原因を特定して修正。トリガー - Sentry, エラー修正, PROJ-123, バグ調査, 本番エラー
-model: opus
 disable-model-invocation: true
 argument-hint: "<Issue ID (例: PROJ-123)>"
 allowed-tools:

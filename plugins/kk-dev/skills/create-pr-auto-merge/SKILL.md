@@ -1,7 +1,6 @@
 ---
 name: create-pr-auto-merge
 description: PR 作成→レビューエージェント対応→自動マージを一貫実行する。/kk-dev:create-pr と /kk-dev:review-comments を組み合わせて使用。トリガー - PR 作成してマージ, auto merge, 自動マージ, PR 作成からマージまで
-model: haiku
 disable-model-invocation: true
 argument-hint: "[--draft] [--skip-review-wait] [--merge-method squash|merge|rebase]"
 allowed-tools:

@@ -1,7 +1,6 @@
 ---
 name: create-eslint-rule
 description: カスタム ESLint ルールを作成する。ESLint ルール、lint ルール、コード規約の追加、静的解析ルールの作成時に使用。トリガー - ESLint, lint ルール, コード規約, 静的解析, ルール作成, no-xxx を検出
-model: sonnet
 disable-model-invocation: true
 argument-hint: "<ルールの説明>"
 allowed-tools:

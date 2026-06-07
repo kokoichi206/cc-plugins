@@ -1,7 +1,6 @@
 ---
 name: learn-from-review
 description: PR レビュー指摘を分析し、再発防止のための ESLint ルールや CLAUDE.md 更新を自動生成する。汎用的な改善点のみ PR 化。トリガー - レビューから学習, learn from review, 指摘を仕組み化, レビュー指摘の自動化
-model: opus
 disable-model-invocation: true
 argument-hint: "<PR番号>"
 allowed-tools:

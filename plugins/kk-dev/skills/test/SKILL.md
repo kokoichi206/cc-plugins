@@ -1,7 +1,6 @@
 ---
 name: test
 description: 指定されたコードに対してテストケースを生成・追加する。正常系・境界値・異常系をカバー。プロジェクトのテストフレームワークに合わせて出力。トリガー - テスト, test, テストを書いて, テストケース追加, ユニットテスト
-model: sonnet
 argument-hint: "<対象ファイル>"
 allowed-tools:
   - Read

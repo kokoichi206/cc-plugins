@@ -1,7 +1,6 @@
 ---
 name: audit-run
 description: プロジェクトの包括的な監査を実行し、結果を GitHub Issue として報告する。セキュリティ、アーキテクチャ、ベストプラクティス、UI/UX、依存関係の 5 種を並列で実行。トリガー - 監査, audit, コード品質チェック, プロジェクト全体レビュー, 脆弱性チェック
-model: opus
 disable-model-invocation: true
 argument-hint: "[YYYY-MM-DD] [--dry-run]"
 allowed-tools:
