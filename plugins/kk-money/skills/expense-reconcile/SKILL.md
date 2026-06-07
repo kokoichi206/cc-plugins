@@ -1,7 +1,6 @@
 ---
 name: expense-reconcile
 description: クレジットカード/銀行/Amazon 等の明細 CSV と領収書を突合し、立替・経費の対応関係を作る。片側のみの不一致と所有者の取り違えを検出する。トリガー - 突合, 立替, 経費突合, 領収書突合, 明細チェック, reconcile, 精算漏れ
-model: opus
 disable-model-invocation: true
 argument-hint: "<明細CSV と 領収書ディレクトリ>"
 allowed-tools:

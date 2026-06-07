@@ -1,7 +1,6 @@
 ---
 name: deploy-triage
 description: Cloud Build/Vercel/GitHub Actions のデプロイ失敗ログから根本原因を特定する (調査主体, 修正は提案)。トリガー - デプロイ失敗, deploy 失敗, CI 失敗, ビルド失敗, build エラー調査, deploy-triage
-model: opus
 disable-model-invocation: true
 argument-hint: "<PR URL | run ID | サービス名>"
 allowed-tools:

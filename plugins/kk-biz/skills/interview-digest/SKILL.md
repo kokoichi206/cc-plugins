@@ -1,7 +1,6 @@
 ---
 name: interview-digest
 description: 採用/SES 外注の候補者面談メモを人ごとにセクション化し、印象・評価軸・採否やアサイン案・最短稼働開始日をまとめた経営層相談用の叩き台を生成する。トリガー - 面談メモ整理, 面談まとめ, 候補者整理, 採用相談の叩き台, アサイン案
-model: opus
 disable-model-invocation: true
 argument-hint: "<面談メモのディレクトリ or ファイル>"
 allowed-tools:

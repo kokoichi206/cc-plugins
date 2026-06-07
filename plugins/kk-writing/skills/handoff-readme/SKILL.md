@@ -1,7 +1,6 @@
 ---
 name: handoff-readme
 description: 他社提供・引き継ぎ用の README / 手順書を生成する。セットアップ・実行・デプロイ・環境変数・残タスクを章立てし、external 指定時は社内固有情報を除外する。トリガー - 引き継ぎ README, handoff, 提供用 README, 手順書, 残タスク整理
-model: sonnet
 disable-model-invocation: true
 argument-hint: "[対象ディレクトリ] [--audience external|internal]"
 allowed-tools:

@@ -1,7 +1,6 @@
 ---
 name: safe-migrate
 description: drizzle/prisma の migrate 実行前に接続先が local か remote(staging/prod) かを判定して明示し、prod 誤爆を防ぐ。トリガー - migrate, drizzle migrate, prisma migrate, マイグレーション, db migrate, 接続先確認, safe-migrate
-model: sonnet
 disable-model-invocation: true
 argument-hint: "[drizzle|prisma] [--apply]"
 allowed-tools:

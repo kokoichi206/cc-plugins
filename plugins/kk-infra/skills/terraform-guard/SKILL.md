@@ -1,7 +1,6 @@
 ---
 name: terraform-guard
 description: Terraform 変更を「ローカルで apply しない・GitHub Actions 経由で apply する」運用規約に沿って安全に進める。plan/validate/fmt はローカル、apply は GHA を発火する。トリガー - terraform, terraform apply, tf 変更, インフラ変更, GHA で apply, terraform-guard
-model: sonnet
 disable-model-invocation: true
 argument-hint: "[変更内容の説明]"
 allowed-tools:

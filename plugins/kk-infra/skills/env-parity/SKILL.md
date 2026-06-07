@@ -1,7 +1,6 @@
 ---
 name: env-parity
 description: GCP Cloud Run などの staging↔production の env 変数/起動フラグ/IAM(未認証アクセス可否)/接続先(Supabase 等)の差分を抽出し、是正コマンド案を提示する (read-only 調査)。トリガー - env 差分, environment parity, Cloud Run 差分, staging production 比較, 401 未認証, IAM 確認, env-parity
-model: opus
 disable-model-invocation: true
 argument-hint: "<service名> [--env staging,production]"
 allowed-tools:

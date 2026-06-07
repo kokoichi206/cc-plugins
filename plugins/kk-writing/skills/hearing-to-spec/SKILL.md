@@ -1,7 +1,6 @@
 ---
 name: hearing-to-spec
 description: 顧客ヒアリングのメモから決定事項/未決事項を整理し、未決には候補とおすすめを付け、既存ドキュメントとの差分箇所を指摘して仕様確定ドキュメントにする。トリガー - ヒアリング整理, 仕様確定, 決定事項, 未決事項, spec 化, 候補とおすすめ
-model: sonnet
 disable-model-invocation: true
 argument-hint: "<ヒアリングメモ> [出力先]"
 allowed-tools:
