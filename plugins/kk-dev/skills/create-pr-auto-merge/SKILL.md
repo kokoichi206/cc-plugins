@@ -68,10 +68,10 @@ Skill tool で `/kk-dev:review-comments` を実行する。
 
 `/kk-dev:review-comments` がコメントの分析・対応・返信・コミット・プッシュまでを行う。
 
-コード修正が発生した場合は CI を再度待機する:
+コード修正が発生した場合は CI を再度待機する。`--watch` で前景を長時間占有せず、`gh pr checks <pr>` (`--watch` なし) を pending の間ポーリングする (30 秒間隔、最大 20 回):
 
 ```bash
-gh pr checks --watch --interval 30
+gh pr checks {pr_number}
 ```
 
 ## Step 4: マージ
