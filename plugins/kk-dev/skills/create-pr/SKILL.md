@@ -62,6 +62,7 @@ allowed-tools:
    ```bash
    gh repo view --json defaultBranchRef --jq '.defaultBranchRef.name'
    ```
+
 解決した base は以降のステップで使い、結果サマリーにも明示する。確信が持てない場合はユーザーに確認する。
 
 ### 1.3 ブランチの確定
