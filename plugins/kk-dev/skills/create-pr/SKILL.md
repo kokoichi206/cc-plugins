@@ -134,11 +134,18 @@ allowed-tools:
    ```
 
 2. PR テンプレートを検出する (3.1 参照)。
-3. PR 本文を作成する (3.2 の規約に従い、3.3 の必須セクションを含める)。
-4. PR を作成する。**タイトルは英語**、本文は日本語で可:
+3. PR タイトルを作成する。**タイトルは日本語で、変更内容を簡潔に要約する (英語タイトル禁止)**。
+   - conventional prefix (`feat:` / `fix:` 等) を付けるかどうかは、対象リポジトリの直近の PR タイトルの慣習に合わせる:
+
+     ```bash
+     gh pr list --state all --limit 10 --json title --jq '.[].title'
+     ```
+
+4. PR 本文を作成する (3.2 の規約に従い、3.3 の必須セクションを含める)。本文も日本語で書く。
+5. PR を作成する:
 
    ```bash
-   gh pr create --base <base> --title "<English title>" --body "<body>"
+   gh pr create --base <base> --title "<日本語タイトル>" --body "<body>"
    ```
 
    - `--draft` 指定時は `--draft` を付ける。
