@@ -17,6 +17,7 @@ allowed-tools:
   - Bash(git ls-remote:*)
   - Bash(git fetch:*)
   - Bash(git log:*)
+  - Bash(git rebase:*)
   - Bash(gh pr:*)
   - Bash(gh run:*)
   - Bash(gh repo:*)
@@ -135,14 +136,16 @@ allowed-tools:
 
 2. PR テンプレートを検出する (3.1 参照)。
 3. PR 本文を作成する (3.2 の規約に従い、3.3 の必須セクションを含める)。
-4. PR を作成する。**タイトルは英語**、本文は日本語で可:
+4. PR を作成する。**タイトルは簡潔な日本語** (変更内容が一目で分かる 1 文、末尾の句点なし)、本文も日本語:
 
    ```bash
-   gh pr create --base <base> --title "<English title>" --body "<body>"
+   gh pr create --base <base> --title "<簡潔な日本語タイトル>" --body "<body>"
    ```
 
    - `--draft` 指定時は `--draft` を付ける。
    - `--reviewer <username>` 指定時は `--reviewer` を付ける。
+
+5. PR 作成直後に base との conflict が無いことを確認する (3.4 参照)。
 
 ### 3.1 PR テンプレートの検出
 
@@ -197,6 +200,21 @@ done
 
 要求に無いのに加えた変更もここに列挙する。
 逸脱・対象外・要求外の追加が 1 つでもある場合は、PR 本文だけでなく結果サマリーでも目立つ形で報告する。
+
+### 3.4 conflict の確認 (必須)
+
+PR 作成直後に base との conflict が発生していないかを確認する:
+
+```bash
+gh pr view <pr> --json mergeable,mergeStateStatus
+```
+
+- `mergeable` が `UNKNOWN` の間は GitHub 側の判定待ちのため、`sleep 5` を挟んで再実行する (最大 6 回)
+- `CONFLICTING` の場合:
+  1. `git fetch origin` してから `origin/<base>` を rebase で取り込み、conflict を解消して push し直す
+  2. 解消方法の判断に迷う conflict (双方に意図的な変更があるなど) は、自動解消せずユーザーに確認する
+  3. push 後に再度 `mergeable` を確認する
+- 確認結果 (conflict なし / 解消済み) を結果サマリーに含める
 
 ## 4. Terraform コスト見積もり (条件付き)
 
@@ -270,6 +288,7 @@ gh pr view --json url,headRefName,commits
 
 - PR URL
 - base ブランチ
+- base との conflict の有無 (解消した場合はその旨)
 - CI ステータス (成功 / 失敗 / スキップ)
 - codex レビューの結果 (実施 / スキップ、指摘への対応)
 - 検証状態 (実施した検証の要約 / 未実施の警告)
