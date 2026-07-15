@@ -2,7 +2,7 @@
 name: create-pr
 description: 現在の変更からブランチ作成、コミット、プッシュ、PR 作成までを一括実行する。detached HEAD の検出・base ブランチ解決・CI 完了確認まで行う。トリガー - PR 作成, プルリクエスト, pull request, ブランチ作成して PR
 disable-model-invocation: true
-argument-hint: "[--draft] [--base branch] [--skip-ci-wait] [--skip-codex] [--reviewer username]"
+argument-hint: "[--draft] [--base branch] [--skip-ci-wait] [--skip-codex] [--review-loop] [--reviewer username]"
 allowed-tools:
   - Bash(git status:*)
   - Bash(git diff:*)
@@ -125,6 +125,10 @@ allowed-tools:
 4. 重大な指摘 (バグ / セキュリティ / 型不整合) は修正して追加コミットする。対応不要と判断したものは理由を記録する。
 
 分類・報告の詳細な流れは `/kk-dev:codex-review` を参照。
+
+### 2.3 収束レビューループ (`--review-loop` 指定時)
+
+`--review-loop` が指定された場合、またはユーザーの指示に「レビューして問題なくなるまで」「指摘がなくなるまで修正とレビューを繰り返して」等の収束条件が含まれる場合は、2.2 の単発レビューの代わりに user スコープの review-loop skill（発見 → 敵対的検証 → 修正の収束ループ）を実行し、収束してから PR 作成に進む。review-loop skill が無い環境では 2.2 にフォールバックし、その旨を結果サマリーに明示する。
 
 ## 3. PR 作成
 
@@ -306,4 +310,5 @@ $ARGUMENTS
 - `--base {branch}`: base ブランチを明示指定 (自動解決を上書き)
 - `--skip-ci-wait`: CI の完了を待たずに終了
 - `--skip-codex`: PR 前の codex レビューをスキップ
+- `--review-loop`: PR 前に収束レビューループ (review-loop skill) を実行
 - `--reviewer {username}`: レビュアーを指定
